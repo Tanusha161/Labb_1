@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_1_4_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            (int group , string name, char name1, string name2, ulong course) student = (2, "Veraksa", 'T', "A.", 2);
+            Console.Write(student.group + "/" + student.course + " " + student.name + " " + student.name1 + " " + student.name2);
+            Console.WriteLine();
+
+            var g = student;
+            Console.WriteLine(g);
+
+        }
+    }
+}

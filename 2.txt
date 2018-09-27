@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_1_2_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str1 = "summer";
+            string str2 = "sun";
+            string str3 = "s";
+            string str4 = "milk, meat, eggs, bread";
+
+            Console.WriteLine("str1 == str2 " + (str1 == str2));
+            Console.WriteLine("str1 == str3 " + (str1 == str3));
+            Console.WriteLine("str1 != str3 " + (str1 != str3));
+
+            Console.WriteLine(" Сравнение строк: " + String.Compare("a", "b"));
+            Console.WriteLine(" Вставка в заданную позицию: " + str3.Insert(1, "unny"));
+            Console.WriteLine(" Удаление подстроки: " + str1.Remove(1, 3));
+
+            string[] products = str4.Split(',');
+            Console.WriteLine(" Разделение строк на элементы: " + products[1]);
+
+            string Axe = "Good";
+            string AxeGo = "day";
+            string Attack = "of_fight";
+            string[] value = new string[] { Axe + " " + AxeGo+ " " +  Attack };
+            String s = String.Join(" ", value);
+
+            Console.WriteLine(" Сцепление строк: " + s);
+
+            string sr1 = "good";
+            string sr2 = "luck";
+            Console.WriteLine(" Строки в оригинале: sr1 = "  + "'{0}' и sr2='{1}'", sr1, sr2);
+     
+            sr2 = String.Copy(sr1);
+
+            Console.WriteLine(" После копирования cтрока sr1 = " + "'{0}' и sr2='{1}'", sr1, sr2);
+
+            //Метод Substring. Класс возвращает новую строку, которая является подстрокой этой строки.
+            string str22 = "Pay for the privilege";
+            Console.WriteLine("Substring Method: " + str22.Substring(12,9));  //Подстрока начинается с указанного заданного индекса и доходит до заданной длины.
+
+            //null и пустые строки
+            string empty = "";
+            Console.WriteLine(empty == ""); // True
+            Console.WriteLine(empty == string.Empty); // True
+            Console.WriteLine(empty.Length == 0); // True
+
+            string nullString = null;
+            Console.WriteLine(nullString == null); // True
+            Console.WriteLine(nullString == ""); // False
+           // Console.WriteLine(nullString.Length == 0); // NullReferenceException
+
+            StringBuilder sb = new StringBuilder("Hello everybody");
+            sb.Remove(6, 9);
+            sb.Append("!");
+            sb.Insert(0, ":)");
+            Console.WriteLine(sb);
+
+        }
+    }
+}
+ 

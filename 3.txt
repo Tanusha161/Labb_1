@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_1_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] array = new int[4, 3];
+            Random ran = new Random();
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    array[i, j] = ran.Next(-20,20);
+                    Console.Write("{0}\t", array[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine('\n');
+            string[] Name = new string[4] {"Jane","Luna","Kara", "Lina" };
+            for (int i = 0; i < Name.Length; i++)
+                Console.Write(Name[i] + "\t");
+            Console.WriteLine("\nДлина массива: "+  Name.Length);
+            
+
+                Console.WriteLine("Введите номер массива (от 0 до 3):");
+                int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите новое значение: ");
+
+            string n = Console.ReadLine();
+
+            Name[num] = n;
+
+             for (int i = 0; i < Name.Length; i++)
+                Console.Write(Name[i] + "\t");
+
+            Console.WriteLine('\n');
+
+            //Ступенчатый (зубчатый) массив:
+
+            
+            int[][] myArr = new int[3][] { new int[2], new int[3], new int[4] };
+            for (int i = 0; i < myArr.Length; i++)
+            {
+                for (int j = 0; j < myArr[i].Length; j++)
+                {
+                    Console.Write($"myArr[{i}][{j}] = ");
+                    myArr[i][j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < myArr.Length; i++)
+            {
+                Console.WriteLine(string.Join(" ", myArr[i]));
+            }
+            //Неявно типизированная переменная
+            var vals = new[] { 1, 2, 3, 4, 5 };
+            var sk = new[] {"Sasha","Dima" };
+        }
+    }
+}

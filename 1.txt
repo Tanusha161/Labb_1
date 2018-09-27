@@ -1,0 +1,100 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_1_1_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            sbyte x = 10;
+            short y = 5;
+            int k = 33;
+            long f = 456484651684;
+            byte z = 250;
+            ushort p = 60_000;
+            uint d = 4_294_967_290;
+            ulong s = 18_446_744_073_709_551_615;
+            char q = 't';
+            bool isEmployed = false;
+            float pi = 3.14F;
+            double zp = 4.5;
+            decimal it = 300m;
+            string Firstname = "Tommi";
+            Person p1 = new Person { Name = "Tanya", LastName = "Veraksa", Age = 18 };
+            Console.WriteLine(" x = {0} \n y = {1} \n f = {2} \n z = {3} \n p = {4} \n f = {5} \n z = {6} \n p = {7} \n d = {8} \n s = {9} \n q = {10} \n isEmployed = {11} \n pi = {12} \n zp = {13} it = {14} \n FirstName = {15} \n Имя : {16}  Фамилия : {17} Возраст: {18} \n k = {19}", x, y, f, z, p, f, z, p, d, s, q, isEmployed, pi, zp, it, Firstname, p1.Name, p1.LastName, p1.Age, k);
+
+
+
+            int num = 2_356_845; // long (64-разрядное целое число)  может хранить переменная int (32-разрядное целое число)
+            long bigNum = num;
+
+            uint set = 4_562_978;
+            ulong bigSet = set;
+
+            byte full = 180;
+            int bigFull = full;
+
+            sbyte mit = 124;
+            short bigMit = mit;
+
+            short NewNum = 550;
+            int bigNewNum = NewNum;
+
+            Console.WriteLine("Неявное преобразование: {0}, {1}, {2}, {3}, {4} ", bigNum, bigFull, bigMit, bigNewNum, bigSet);
+
+            int i1 = 455;
+            int i2 = 84500;
+            decimal dec = 7.98845m;
+            byte b = 16;
+            Int16 v = 55;
+            Console.WriteLine("Явное преобразование: {0}, {1}, {2}, {3}, {4}", (short)i1, (short)i2, (int)dec, (Int16)b, (Byte)v);
+
+            //Упаковка и распаковка
+
+            int x5 = 10;
+            object o = x5;
+            byte y5 = (byte)(int)o;
+
+            var i = 5;
+            var mas = new[] { 2, 5, 8, 90, 10 };
+            var mas2 = new List<int>(new int[] { 5, 10, 15, 20 });
+            var inf = "Hello";
+            //  При компиляции компилятор сам выводит тип данных исходя из присвоенного значения
+
+            Console.WriteLine($"Результат работы с неявно типизированной переменной: {i}, {inf}, {mas.GetType()}, {mas2.GetType()}");
+
+            int? z3 = null;  // запись? является упрощенной формой использования структуры System.Nullable < T >
+
+            z3 = 5;
+
+            Console.WriteLine(z3);
+
+            int? x1 = null;
+            int? x2 = null;
+            Console.WriteLine(x1 == x2);
+
+            //Оператор ?? null-объединение
+
+            int? x3 = null;
+            int y1 = x3 ?? 1;
+
+            int? x4 = 7;
+            int y2 = x4 ?? 2;
+
+            Console.WriteLine($"{y1}, {y2}");
+
+        }
+
+    }
+}
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string LastName { get; set; }
+}
+
